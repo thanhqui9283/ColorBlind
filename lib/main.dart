@@ -16,10 +16,11 @@ class MyApp extends StatelessWidget {
         title: 'Do An Tot Nghiep Yeahh',
         home: AnimatedSplashScreen(
             duration: 2500,
-            splash: Icons.home,
+            splash: Icons.delete,
             nextScreen: const HomeWidget(),
             splashTransition: SplashTransition.scaleTransition,
             backgroundColor: AppColors.splashColor));
+
   }
 }
 
