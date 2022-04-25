@@ -18,7 +18,7 @@ class ScoreScreen extends StatelessWidget {
             children: [
               const Spacer(flex: 3),
               Text(
-                "Score",
+                "Kết quả",
                 style: Theme.of(context)
                     .textTheme
                     .headline3!

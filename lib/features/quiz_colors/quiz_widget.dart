@@ -5,8 +5,8 @@ import '../../components/body.dart';
 import '../../data/controllers/question_controller.dart';
 
 // ignore: camel_case_types
-class Quiz_Widget extends StatelessWidget {
-  const Quiz_Widget({Key? key}) : super(key: key);
+class QuizWidget extends StatelessWidget {
+  const QuizWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
