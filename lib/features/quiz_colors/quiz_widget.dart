@@ -1,8 +1,7 @@
+import 'package:colorsblind/resource/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../components/body.dart';
-import '../../data/controllers/question_controller.dart';
 
 // ignore: camel_case_types
 class QuizWidget extends StatelessWidget {
@@ -10,16 +9,12 @@ class QuizWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    QuestionController _controller = Get.put(QuestionController());
+    // QuestionController _controller = Get.put(QuestionController());
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColors.transparent,
         elevation: 0,
-        actions: [
-          TextButton(
-              onPressed: _controller.nextQuestion, child: const Text("Skip")),
-        ],
       ),
       body: const Body(),
     );

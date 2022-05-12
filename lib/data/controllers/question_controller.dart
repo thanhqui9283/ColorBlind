@@ -23,7 +23,7 @@ class QuestionController extends GetxController
             question: question['question'],
             options: question['options'],
             answer: question['answer_index'],
-            images: ''),
+            photos: question['photos']),
       )
       .toList();
 
@@ -51,7 +51,7 @@ class QuestionController extends GetxController
   @override
   void onInit() {
     _animationController =
-        AnimationController(duration: const Duration(seconds: 60), vsync: this);
+        AnimationController(duration: const Duration(seconds: 30), vsync: this);
     _animation = Tween<double>(begin: 0, end: 1).animate(_animationController)
       ..addListener(() {
         update();

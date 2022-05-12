@@ -1,6 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import '../features/onboard/onboard_widget.dart';
 import '../resource/colors.dart';
-import '../features/home_widget.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
         home: AnimatedSplashScreen(
             duration: 2500,
             splash: Icons.home,
-            nextScreen:   const HomeWidget(),
+            nextScreen:   const OnBoardWidget(),
             splashTransition: SplashTransition.scaleTransition,
-            backgroundColor: AppColors.splashColor));
+            backgroundColor: AppColors.kSecondaryColor));
   }
 }
 

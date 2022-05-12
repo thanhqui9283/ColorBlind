@@ -1,8 +1,8 @@
-import 'package:colorsblind/resource/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../data/controllers/question_controller.dart';
+import '../../resource/colors.dart';
 
 class ScoreScreen extends StatelessWidget {
   const ScoreScreen({Key? key}) : super(key: key);
