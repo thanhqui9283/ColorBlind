@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 import '../../features/scrore_colors/score_widget.dart';
 import '../models/questions_colors.dart';
 
-class QuestionController extends GetxController
-    // ignore: deprecated_member_use
-    with SingleGetTickerProviderMixin {
+class QuestionController extends GetxController // ignore: deprecated_member_use
+    with
+        SingleGetTickerProviderMixin {
   late AnimationController _animationController;
   late Animation _animation;
 
@@ -79,7 +79,7 @@ class QuestionController extends GetxController
     _animationController.stop();
     update();
 
-    Future.delayed(const Duration(seconds: 3), () {
+    Future.delayed(const Duration(seconds: 2), () {
       nextQuestion();
     });
   }

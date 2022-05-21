@@ -32,7 +32,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget> {
               ),
               height: MediaQuery.of(context).size.height * 0.07,
               width: MediaQuery.of(context).size.width,
-              child: const Center(
+              child: Center(
                   child: Text(
                 'Tiếp tục',
                 style: TextStyle(color: AppColors.kBlackColor,

@@ -1,3 +1,4 @@
+import 'package:colorsblind/resource/result_colorsblind.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,31 +11,38 @@ class ScoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     QuestionController _qnController = Get.put(QuestionController());
+    print('cau tra loi dung: ${_qnController.correctAns}');
+
     return Scaffold(
-      body: Stack(
-        fit: StackFit.expand,
+      appBar: AppBar(
+        title: Text('???'),
+      ),
+      body: Column(
         children: [
-          Column(
-            children: [
-              const Spacer(flex: 3),
-              Text(
-                "Kết quả",
-                style: Theme.of(context)
-                    .textTheme
-                    .headline3!
-                    .copyWith(color: AppColors.kSecondaryColor),
-              ),
-              const Spacer(),
-              Text(
-                "${_qnController.correctAns * 10}/${_qnController.questions.length * 10}",
-                style: Theme.of(context)
-                    .textTheme
-                    .headline4!
-                    .copyWith(color: AppColors.kSecondaryColor),
-              ),
-              const Spacer(flex: 3),
-            ],
-          )
+          Text('Hifnh anh gi do'),
+          if (_qnController.correctAns == 0)
+            Column(
+              children: <Widget>[
+                Text(ResultText.memeWellEyes),
+                Text(ResultText.wellEyes),
+              ],
+            ),
+          if (_qnController.correctAns == 1 || _qnController.correctAns == 2)
+            Text(ResultText.mediumEyes),
+          if (_qnController.correctAns == 3 || _qnController.correctAns == 4)
+            Column(
+              children: <Widget>[
+                Text(ResultText.memeMediumEyes),
+                Text(ResultText.mediumEyes),
+              ],
+            ),
+          if (_qnController.correctAns >= 5)
+            Column(
+              children: <Widget>[
+                Text(ResultText.memeHighEyes),
+                Text(ResultText.highEyes),
+              ],
+            ),
         ],
       ),
     );
