@@ -1,4 +1,5 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:colorsblind/resource/images.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import '../features/onboard/onboard_widget.dart';
 import '../resource/colors.dart';
@@ -17,10 +18,14 @@ class MyApp extends StatelessWidget {
         title: 'Color Blind',
         home: AnimatedSplashScreen(
             duration: 2500,
-            splash: Icons.home,
-            nextScreen:   const OnBoardWidget(),
-            splashTransition: SplashTransition.scaleTransition,
-            backgroundColor: AppColors.kSecondaryColor));
+            splash: CircleAvatar(
+                radius: 150,
+                child: Image.asset(
+                  AppImages.logo,
+                )),
+            nextScreen: const OnBoardWidget(),
+        splashTransition: SplashTransition.scaleTransition,
+        backgroundColor: AppColors.kSecondaryColor));
   }
 }
 

@@ -61,7 +61,7 @@ class _CheckColorsState extends State<CheckColors> {
                     border: Border.all(color: AppColors.kGrayColor),
                     boxShadow: const [
                       BoxShadow(
-                        color: AppColors.kBlackColor,
+                        color: AppColors.kGrayColor,
                         offset: Offset(1, 1),
                         spreadRadius: 1,
                         blurRadius: 0.5,
@@ -71,7 +71,7 @@ class _CheckColorsState extends State<CheckColors> {
                   child: (_imageFile != null)
                       ? Image.file(_imageFile!)
                       : Image.asset(
-                          Images.defaul_Image,
+                          AppImages.defaul_Image,
                           height: MediaQuery.of(context).size.height * 0.2,
                           width: MediaQuery.of(context).size.width * 0.9,
                         )),

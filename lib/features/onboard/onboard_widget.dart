@@ -1,5 +1,8 @@
 import 'package:colorsblind/features/home_widget.dart';
+import 'package:colorsblind/resource/images.dart';
+import 'package:colorsblind/resource/intro_text.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../components/list_tab_view.dart';
 import '../../resource/colors.dart';
@@ -26,18 +29,20 @@ class _OnBoardWidgetState extends State<OnBoardWidget> {
             );
           },
           child: Container(
-              decoration: BoxDecoration(
-                color: AppColors.kSecondaryColor,
-                borderRadius: BorderRadius.circular(15),
+            decoration: BoxDecoration(
+              color: AppColors.kSecondaryColor,
+              borderRadius: BorderRadius.circular(15),
+            ),
+            height: MediaQuery.of(context).size.height * 0.07,
+            width: MediaQuery.of(context).size.width,
+            child: Center(
+              child:  Text(
+                TextOnboard.textNext,
+                style: GoogleFonts.poppins(
+                    fontStyle: FontStyle.normal, fontSize: 17),
               ),
-              height: MediaQuery.of(context).size.height * 0.07,
-              width: MediaQuery.of(context).size.width,
-              child: Center(
-                  child: Text(
-                'Tiếp tục',
-                style: TextStyle(color: AppColors.kBlackColor,
-                fontSize: 17),
-              ))),
+            ),
+          ),
         ),
       ),
       body: SingleChildScrollView(
@@ -54,24 +59,20 @@ class _OnBoardWidgetState extends State<OnBoardWidget> {
                 width: MediaQuery.of(context).size.width,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const <Widget>[
-                    Text(
-                      'Chào mừng, đến với ColorBlind!!!',
-                      style: TextStyle(
-                        color: AppColors.kBlackColor,
-                        fontSize: 14,
-                      ),
-                    ),
-                    SizedBox(
+                  children: <Widget>[
+                    CircleAvatar(
+                        radius: 65,
+                        child: Image.asset(
+                          AppImages.logo,
+                        )),
+                    const SizedBox(
                       height: 25,
                     ),
-                    Text(
-                      'COLOR BLIND',
-                      style: TextStyle(
-                        color: AppColors.kBlackColor,
-                        fontSize: 30,
-                      ),
-                    ),
+                    Text(TextOnboard.textLogo,
+                        style: GoogleFonts.alike(
+                            fontStyle: FontStyle.normal,
+                            color: AppColors.textLogo,
+                            fontSize: 35)),
                   ],
                 ),
               ),

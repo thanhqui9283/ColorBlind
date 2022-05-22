@@ -16,27 +16,27 @@ class Question {
 const List sample_data = [
   {
     "id": 1,
-    "question": "Test 1",
-    "options": ['A', 'B', 'C', 'D'],
+    "question": "Bạn nhìn thấy số mấy?",
+    "options": ['Số 8', 'Số 4', 'Số 0', 'Số 10'],
     "answer_index": 1,
     "photos":
-        "https://phukienthaythe.com/images/san-pham/thiet-bi-mo-phong/ishihara/plate22.gif",
+        "https://phukienthaythe.com/images/data/2019/05/01/kiemtramumau2.png",
   },
   {
     "id": 2,
-    "question": "Test 2.",
-    "options": ['A', 'B', 'C', 'D'],
+    "question": "Bạn nhìn thấy số mấy?",
+    "options": ['Số 10', 'Số 16', 'Số 6', 'Không nhìn thấy gì!'],
     "answer_index": 2,
     "photos":
-        "https://phukienthaythe.com/images/san-pham/thiet-bi-mo-phong/ishihara/plate22.gif",
+        "https://phukienthaythe.com/images/san-pham/thiet-bi-mo-phong/ishihara/plate12.gif",
   },
   {
     "id": 3,
     "question": "Test 3",
-    "options": ['A', 'B', 'C', 'D'],
+    "options": ['Số 5', 'Không thấy màu gì', 'Số 3', 'Số 1'],
     "answer_index": 2,
     "photos":
-        "https://phukienthaythe.com/images/san-pham/thiet-bi-mo-phong/ishihara/plate22.gif",
+        "https://phukienthaythe.com/images/san-pham/thiet-bi-mo-phong/ishihara/plate14.gif",
   },
   {
     "id": 4,

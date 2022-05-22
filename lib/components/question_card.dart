@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../data/controllers/question_controller.dart';
 import '../data/models/questions_colors.dart';
 import '../resource/colors.dart';
@@ -18,7 +19,6 @@ class QuestionCard extends StatelessWidget {
     QuestionController _controller = Get.put(QuestionController());
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: AppColors.kDefaultPadding),
-      padding: const EdgeInsets.all(AppColors.kDefaultPadding),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(30),
@@ -28,17 +28,14 @@ class QuestionCard extends StatelessWidget {
           children: <Widget>[
             Text(
               question.question,
-              style: Theme.of(context)
-                  .textTheme
-                  .headline6
-                  ?.copyWith(color: AppColors.kBlackColor),
+              style: GoogleFonts.poppins(
+                  fontStyle: FontStyle.normal, fontSize: 18),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height *0.5,
+              height: MediaQuery.of(context).size.height *0.37,
               width: MediaQuery.of(context).size.width,
               child: Image.network(question.photos),
             ),
-            const SizedBox(height: AppColors.kDefaultPadding / 10),
             ...List.generate(
               question.options.length,
               (index) => Option(

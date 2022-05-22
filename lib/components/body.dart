@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../data/controllers/question_controller.dart';
 import '../resource/colors.dart';
@@ -31,26 +32,22 @@ class Body extends StatelessWidget {
                   () => Text.rich(
                     TextSpan(
                       text:
-                          "Câu hỏi ${_questionController.questionNumber.value}",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline5!
-                          .copyWith(color: AppColors.kSecondaryColor),
+                          "Câu: ${_questionController.questionNumber.value}",
+                      style: GoogleFonts.poppins(
+                          fontStyle: FontStyle.normal, fontSize: 20, color: AppColors.kGrayColor),
+
                       children: [
                         TextSpan(
                           text: "/${_questionController.questions.length}",
-                          style: Theme.of(context)
-                              .textTheme
-                              .headline5!
-                              .copyWith(color: AppColors.kSecondaryColor),
+                          style: GoogleFonts.poppins(
+                              fontStyle: FontStyle.normal, fontSize: 20),
                         ),
                       ],
                     ),
                   ),
                 ),
               ),
-              const Divider(thickness: 1),
-              const SizedBox(height: AppColors.kDefaultPadding),
+              const Divider(thickness: 2),
               Expanded(
                 child: PageView.builder(
                   physics: const NeverScrollableScrollPhysics(),
