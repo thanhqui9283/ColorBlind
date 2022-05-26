@@ -11,6 +11,6 @@ class ResultText {
   static const String memeMediumEyes =
       'Ơ kìa, rất tiếc bạn bạn khả năng bạn bị bệnh là:';
 
-  static const String highEyes = 'MÙ MÀU !';
+  static const String highEyes = 'MÙ MÀU hoàn toàn !';
   static const String memeHighEyes = 'Ét ô ét, Ét ô ét! bạn đã bị';
 }

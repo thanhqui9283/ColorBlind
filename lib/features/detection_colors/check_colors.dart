@@ -1,12 +1,15 @@
 import 'dart:io';
 
 import 'package:colorsblind/resource/colors.dart';
+import 'package:colorsblind/resource/test_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 import 'dart:async';
 
 import '../../resource/images.dart';
+import '../../resource/text_name_home.dart';
 
 class CheckColors extends StatefulWidget {
   const CheckColors({Key? key}) : super(key: key);
@@ -34,10 +37,12 @@ class _CheckColorsState extends State<CheckColors> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "KIỂM TRA MÀU SẮC",
-          style: TextStyle(fontSize: 17),
-        ),
+        title: Text(TestColor.testColorAppbar,
+            style: GoogleFonts.alike(
+                fontStyle: FontStyle.normal,
+                fontWeight: FontWeight.bold,
+                color: AppColors.textLogo,
+                fontSize: 15)),
         centerTitle: true,
         backgroundColor: AppColors.kSecondaryColor,
       ),
@@ -45,10 +50,16 @@ class _CheckColorsState extends State<CheckColors> {
         child: Center(
           child: Column(
             children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.all(30.0),
-                child: Text(
-                    'Bạn hãy chọn tấm hình trong máy, mà bạn khó nhận biết màu sắc của chúng, hoặc bạn có thể sử dụng Camera để chụp lại màu sắc bạn khó nhận biết, ColorBlind sẽ giúp nhận biết màu sắc đó.'),
+              Padding(
+                padding: const EdgeInsets.all(30.0),
+                child: Container(
+                    width: 100.0,
+                    height: 100.0,
+                    decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                            fit: BoxFit.fill,
+                            image: AssetImage(AppImages.checkColor)))),
               ),
               Container(
                   margin: const EdgeInsets.all(10),
@@ -73,7 +84,7 @@ class _CheckColorsState extends State<CheckColors> {
                       : Image.asset(
                           AppImages.defaul_Image,
                           height: MediaQuery.of(context).size.height * 0.2,
-                          width: MediaQuery.of(context).size.width * 0.9,
+                          width: MediaQuery.of(context).size.width * 0.8,
                         )),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -99,26 +110,31 @@ class _CheckColorsState extends State<CheckColors> {
                       ))
                 ],
               ),
-              const SizedBox(height: 20),
-              const Text('Màu sắc trong tấm hình:'),
+              const SizedBox(height: 10),
+              Text(TestColor.resultColor,
+                  style: GoogleFonts.alike(
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.cColor,
+                      fontSize: 15)),
               const SizedBox(height: 20),
               Column(
                 children: _classifiedResult != null
                     ? _classifiedResult!.map((result) {
                         return Card(
                           elevation: 1.0,
-                          color: AppColors.kSecondaryColor,
+                          color: AppColors.kGrayColor,
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.5,
                             margin: const EdgeInsets.all(10),
                             child: Center(
                               child: Text(
-                                "${result["label"]} :  ${(result["confidence"] * 100).toStringAsFixed(1)}%",
-                                style: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15.0,
-                                    fontWeight: FontWeight.bold),
-                              ),
+                                  "${result["label"]} :  ${(result["confidence"] * 100).toStringAsFixed(1)}%",
+                                  style: GoogleFonts.alike(
+                                      fontStyle: FontStyle.normal,
+                                      fontWeight: FontWeight.bold,
+                                      color: AppColors.textLogo,
+                                      fontSize: 16)),
                             ),
                           ),
                         );

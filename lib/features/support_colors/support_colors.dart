@@ -10,6 +10,6 @@ class SupportColors extends StatefulWidget {
 class _SupportColorsState extends State<SupportColors> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }

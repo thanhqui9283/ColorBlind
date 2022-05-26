@@ -25,7 +25,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget> {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const HomeWidget()),
+              MaterialPageRoute(builder: (context) =>  HomeWidget()),
             );
           },
           child: Container(

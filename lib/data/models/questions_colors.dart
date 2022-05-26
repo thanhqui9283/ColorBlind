@@ -18,7 +18,7 @@ const List sample_data = [
     "id": 1,
     "question": "Bạn nhìn thấy số mấy?",
     "options": ['Số 8', 'Số 4', 'Số 0', 'Số 10'],
-    "answer_index": 1,
+    "answer_index": 0,
     "photos":
         "https://phukienthaythe.com/images/data/2019/05/01/kiemtramumau2.png",
   },
@@ -26,7 +26,7 @@ const List sample_data = [
     "id": 2,
     "question": "Bạn nhìn thấy số mấy?",
     "options": ['Số 10', 'Số 16', 'Số 6', 'Không nhìn thấy gì!'],
-    "answer_index": 2,
+    "answer_index": 1,
     "photos":
         "https://phukienthaythe.com/images/san-pham/thiet-bi-mo-phong/ishihara/plate12.gif",
   },

@@ -32,7 +32,7 @@ class QuestionCard extends StatelessWidget {
                   fontStyle: FontStyle.normal, fontSize: 18),
             ),
             SizedBox(
-              height: MediaQuery.of(context).size.height *0.37,
+              height: MediaQuery.of(context).size.height *0.4,
               width: MediaQuery.of(context).size.width,
               child: Image.network(question.photos),
             ),
