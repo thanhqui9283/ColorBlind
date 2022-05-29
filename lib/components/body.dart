@@ -7,12 +7,34 @@ import '../resource/colors.dart';
 import 'progress_bar.dart';
 import 'question_card.dart';
 
-class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
+class Body extends StatefulWidget {
+  final bool check;
+  const Body({Key? key, this.check=false}) : super(key: key);
+
+  @override
+  State<Body> createState() => _BodyState();
+}
+
+class _BodyState extends State<Body> {
+  final QuestionController _questionController = Get.put(QuestionController());
+
+
+  @override
+  void initState() {
+    super.initState();
+    if(widget.check){
+      _questionController.updateCheck();
+    }
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    Get.delete<QuestionController>();
+  }
 
   @override
   Widget build(BuildContext context) {
-    QuestionController _questionController = Get.put(QuestionController());
     return Stack(
       children: [
         SafeArea(
@@ -31,11 +53,11 @@ class Body extends StatelessWidget {
                 child: Obx(
                   () => Text.rich(
                     TextSpan(
-                      text:
-                          "Câu: ${_questionController.questionNumber.value}",
+                      text: "Câu: ${_questionController.questionNumber.value}",
                       style: GoogleFonts.poppins(
-                          fontStyle: FontStyle.normal, fontSize: 20, color: AppColors.kGrayColor),
-
+                          fontStyle: FontStyle.normal,
+                          fontSize: 20,
+                          color: AppColors.kGrayColor),
                       children: [
                         TextSpan(
                           text: "/${_questionController.questions.length}",

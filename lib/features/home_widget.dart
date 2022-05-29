@@ -1,24 +1,24 @@
-import 'package:colorsblind/features/detection_colors/check_colors.dart';
-import 'package:colorsblind/features/quiz_colors/quiz_widget.dart';
-import 'package:colorsblind/resource/colors.dart';
-import 'package:colorsblind/resource/text_name_home.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../resource/colors.dart';
 import '../resource/images.dart';
+import '../resource/text_name_home.dart';
+import 'detection_colors/check_colors.dart';
+import 'quiz_colors/quiz_widget.dart';
 
 class HomeWidget extends StatelessWidget {
   HomeWidget({Key? key}) : super(key: key);
   final list = <String>[
-    'assets/images/1.png',
-    'assets/images/2.png',
-    'assets/images/3.png',
-    'assets/images/4.png',
-    'assets/images/5.png',
-    'assets/images/6.png',
-    'assets/images/7.png',
-    'assets/images/8.png',
+    AppImages.color1,
+    AppImages.color2,
+    AppImages.color3,
+    AppImages.color4,
+    AppImages.color5,
+    AppImages.color6,
+    AppImages.color7,
+    AppImages.color8,
   ];
 
   @override
@@ -86,10 +86,13 @@ class HomeWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         InkWell(
-                          onTap: (){  Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => const CheckColors()),
-                          );},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const CheckColors()),
+                            );
+                          },
                           child: Padding(
                             padding: const EdgeInsets.only(left: 20.0, top: 10),
                             child: Container(
@@ -129,6 +132,13 @@ class HomeWidget extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(right: 20.0, top: 10),
                           child: Container(
+                            alignment: AlignmentDirectional.center,
+                            child: Text(TextNameHome.spColorBlind,
+                                style: GoogleFonts.alike(
+                                    fontStyle: FontStyle.normal,
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.textLogo,
+                                    fontSize: 15)),
                             height: 200,
                             width: 160,
                             decoration: const BoxDecoration(
@@ -138,7 +148,7 @@ class HomeWidget extends StatelessWidget {
                                 bottomLeft: Radius.circular(50),
                                 bottomRight: Radius.circular(50),
                               ),
-                              color: AppColors.kGrayColor,
+                              color: AppColors.checkTrue,
                             ),
                           ),
                         ),
@@ -148,10 +158,11 @@ class HomeWidget extends StatelessWidget {
                       height: 20,
                     ),
                     InkWell(
-                      onTap: (){
+                      onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const QuizWidget()),
+                          MaterialPageRoute(
+                              builder: (context) => const QuizWidget()),
                         );
                       },
                       child: Padding(

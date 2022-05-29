@@ -1,11 +1,12 @@
-import 'package:colorsblind/features/home_widget.dart';
-import 'package:colorsblind/resource/images.dart';
-import 'package:colorsblind/resource/intro_text.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../components/list_tab_view.dart';
 import '../../resource/colors.dart';
+import '../../resource/images.dart';
+import '../../resource/intro_text.dart';
+import '../home_widget.dart';
 
 class OnBoardWidget extends StatefulWidget {
   const OnBoardWidget({Key? key}) : super(key: key);

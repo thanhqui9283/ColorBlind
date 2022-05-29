@@ -1,15 +1,15 @@
 import 'dart:io';
 
-import 'package:colorsblind/resource/colors.dart';
-import 'package:colorsblind/resource/test_colors.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 import 'dart:async';
 
+import '../../resource/colors.dart';
 import '../../resource/images.dart';
-import '../../resource/text_name_home.dart';
+import '../../resource/test_colors.dart';
 
 class CheckColors extends StatefulWidget {
   const CheckColors({Key? key}) : super(key: key);

@@ -6,6 +6,7 @@ import '../models/questions_colors.dart';
 
 class QuestionController extends GetxController // ignore: deprecated_member_use
     with
+        // ignore: deprecated_member_use
         SingleGetTickerProviderMixin {
   late AnimationController _animationController;
   late Animation _animation;
@@ -48,6 +49,15 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
 
   int get numOfCorrectAns => _numOfCorrectAns;
 
+  int _failedAns = 0;
+  int get failedAns => _failedAns;
+
+  bool check = false;
+  void updateCheck(){
+    check = true;
+    update();
+  }
+
   @override
   void onInit() {
     _animationController =
@@ -75,11 +85,13 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
     _selectedAns = selectedIndex;
 
     if (_correctAns == _selectedAns) _numOfCorrectAns++;
-
+    else {
+      _failedAns++;
+    };
     _animationController.stop();
     update();
 
-    Future.delayed(const Duration(seconds: 2), () {
+    Future.delayed(const Duration(seconds: 1), () {
       nextQuestion();
     });
   }
@@ -88,13 +100,18 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
     if (_questionNumber.value != _questions.length) {
       _isAnswered = false;
       _pageController.nextPage(
-          duration: const Duration(milliseconds: 250), curve: Curves.ease);
+          duration: const Duration(milliseconds: 280), curve: Curves.ease);
 
       _animationController.reset();
 
       _animationController.forward().whenComplete(nextQuestion);
     } else {
-      Get.to(const ScoreScreen());
+      update();
+      if(check){
+        Get.close(2);
+      }
+      Get.close(1);
+      Get.to(() => const ScoreScreen());
     }
   }
 

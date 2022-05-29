@@ -1,5 +1,6 @@
 import 'package:colorsblind/resource/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -44,8 +45,9 @@ class Option extends StatelessWidget {
             child: Container(
               height: MediaQuery.of(context).size.height * 0.065,
               width: MediaQuery.of(context).size.width * 0.8,
-              margin: const EdgeInsets.only(top: AppColors.kDefaultPadding *0.7),
-              padding: const EdgeInsets.all(AppColors.kDefaultPadding *0.5),
+              margin:
+                  const EdgeInsets.only(top: AppColors.kDefaultPadding * 0.7),
+              padding: const EdgeInsets.all(AppColors.kDefaultPadding * 0.5),
               decoration: BoxDecoration(
                 border: Border.all(color: getTheRightColor()),
                 borderRadius: BorderRadius.circular(15),
