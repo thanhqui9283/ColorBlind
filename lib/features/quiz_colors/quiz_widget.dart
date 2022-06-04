@@ -8,7 +8,6 @@ class QuizWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('+_+_+');
     return Scaffold(
       body: Body(check: check),
     );

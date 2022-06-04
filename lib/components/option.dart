@@ -59,7 +59,7 @@ class Option extends StatelessWidget {
                     "${index + 1}.   $text",
                     style: GoogleFonts.poppins(
                         fontStyle: FontStyle.normal,
-                        fontSize: 17,
+                        fontSize: 20,
                         color: AppColors.kGrayColor),
                   ),
                   Container(

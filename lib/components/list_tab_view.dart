@@ -47,7 +47,7 @@ class ListTab extends StatelessWidget {
             Text(
               IntroText.intro1,
               style: GoogleFonts.alike
-            (fontStyle: FontStyle.normal, fontSize: 19),
+            (fontStyle: FontStyle.normal, fontSize: 22),
               softWrap: true,
               textAlign: TextAlign.start,
 
@@ -55,12 +55,12 @@ class ListTab extends StatelessWidget {
             Text(
               IntroText.intro2,
               style: GoogleFonts.alike(
-                  fontStyle: FontStyle.normal, fontSize: 19),
+                  fontStyle: FontStyle.normal, fontSize: 22),
               softWrap: true,
             ),
             Text(
               IntroText.intro3,
-              style: GoogleFonts.alike(fontStyle: FontStyle.normal, fontSize: 19),
+              style: GoogleFonts.alike(fontStyle: FontStyle.normal, fontSize: 22),
               softWrap: true,
               textAlign: TextAlign.center,
 

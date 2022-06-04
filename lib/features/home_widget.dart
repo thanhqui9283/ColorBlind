@@ -1,3 +1,4 @@
+import 'package:colorsblind/features/scrore_colors/game_eyes.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -79,7 +80,7 @@ class HomeWidget extends StatelessWidget {
                                   fontStyle: FontStyle.normal,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.kGrayColor,
-                                  fontSize: 20))),
+                                  fontSize: 25))),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -129,26 +130,48 @@ class HomeWidget extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 20.0, top: 10),
-                          child: Container(
-                            alignment: AlignmentDirectional.center,
-                            child: Text(TextNameHome.spColorBlind,
-                                style: GoogleFonts.alike(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.textLogo,
-                                    fontSize: 15)),
-                            height: 200,
-                            width: 160,
-                            decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(50),
-                                topRight: Radius.circular(50),
-                                bottomLeft: Radius.circular(50),
-                                bottomRight: Radius.circular(50),
+                        InkWell(
+                          onTap: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const GameEyes()),
+                            );
+
+                          },
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 20.0, top: 10),
+                            child: Container(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(TextNameHome.spColorBlind,
+                                      style: GoogleFonts.alike(
+                                          fontStyle: FontStyle.normal,
+                                          fontWeight: FontWeight.bold,
+                                          color: AppColors.textLogo,
+                                          fontSize: 14)),
+                                  const SizedBox(
+                                    height: 20,
+                                  ),
+                                  CircleAvatar(
+                                      radius: 45,
+                                      child: Image.asset(
+                                        AppImages.trainEyes,
+                                      )),
+                                ],
                               ),
-                              color: AppColors.checkTrue,
+                              height: 200,
+                              width: 160,
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(50),
+                                  topRight: Radius.circular(50),
+                                  bottomLeft: Radius.circular(50),
+                                  bottomRight: Radius.circular(50),
+                                ),
+                                color: AppColors.checkTrue,
+                              ),
                             ),
                           ),
                         ),
@@ -184,7 +207,7 @@ class HomeWidget extends StatelessWidget {
                                 CircleAvatar(
                                     radius: 50,
                                     child: Image.asset(
-                                      AppImages.testcolors,
+                                      AppImages.testColors,
                                     )),
                               ],
                             ),
@@ -203,6 +226,7 @@ class HomeWidget extends StatelessWidget {
                         ),
                       ),
                     ),
+
                   ],
                 ),
               )),

@@ -1,6 +1,5 @@
 import 'dart:io';
 
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
@@ -82,7 +81,7 @@ class _CheckColorsState extends State<CheckColors> {
                   child: (_imageFile != null)
                       ? Image.file(_imageFile!)
                       : Image.asset(
-                          AppImages.defaul_Image,
+                          AppImages.imageNull,
                           height: MediaQuery.of(context).size.height * 0.2,
                           width: MediaQuery.of(context).size.width * 0.8,
                         )),

@@ -50,10 +50,12 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
   int get numOfCorrectAns => _numOfCorrectAns;
 
   int _failedAns = 0;
+
   int get failedAns => _failedAns;
 
   bool check = false;
-  void updateCheck(){
+
+  void updateCheck() {
     check = true;
     update();
   }
@@ -61,7 +63,7 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
   @override
   void onInit() {
     _animationController =
-        AnimationController(duration: const Duration(seconds: 30), vsync: this);
+        AnimationController(duration: const Duration(seconds: 15), vsync: this);
     _animation = Tween<double>(begin: 0, end: 1).animate(_animationController)
       ..addListener(() {
         update();
@@ -84,10 +86,11 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
     _correctAns = question.answer;
     _selectedAns = selectedIndex;
 
-    if (_correctAns == _selectedAns) _numOfCorrectAns++;
-    else {
+    if (_correctAns == _selectedAns) {
+      _numOfCorrectAns++;
+    } else {
       _failedAns++;
-    };
+    }
     _animationController.stop();
     update();
 
@@ -100,14 +103,14 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
     if (_questionNumber.value != _questions.length) {
       _isAnswered = false;
       _pageController.nextPage(
-          duration: const Duration(milliseconds: 280), curve: Curves.ease);
+          duration: const Duration(milliseconds: 100), curve: Curves.ease);
 
       _animationController.reset();
 
       _animationController.forward().whenComplete(nextQuestion);
     } else {
       update();
-      if(check){
+      if (check) {
         Get.close(2);
       }
       Get.close(1);

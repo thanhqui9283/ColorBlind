@@ -56,13 +56,14 @@ class _BodyState extends State<Body> {
                       text: "Câu: ${_questionController.questionNumber.value}",
                       style: GoogleFonts.poppins(
                           fontStyle: FontStyle.normal,
-                          fontSize: 20,
-                          color: AppColors.kGrayColor),
+                          fontSize: 34,
+                          color: AppColors.kOrigenColor),
                       children: [
                         TextSpan(
                           text: "/${_questionController.questions.length}",
                           style: GoogleFonts.poppins(
-                              fontStyle: FontStyle.normal, fontSize: 20),
+                              fontStyle: FontStyle.normal, fontSize: 20,
+                          color: AppColors.kGrayColor),
                         ),
                       ],
                     ),

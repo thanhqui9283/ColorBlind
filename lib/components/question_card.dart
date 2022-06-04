@@ -29,12 +29,13 @@ class QuestionCard extends StatelessWidget {
             Text(
               question.question,
               style: GoogleFonts.poppins(
-                  fontStyle: FontStyle.normal, fontSize: 18),
+                  fontStyle: FontStyle.normal, fontSize: 27,
+              color: AppColors.kGrayColor),
             ),
             SizedBox(
               height: MediaQuery.of(context).size.height *0.4,
               width: MediaQuery.of(context).size.width,
-              child: Image.network(question.photos),
+              child: Image.asset(question.photos),
             ),
             ...List.generate(
               question.options.length,
