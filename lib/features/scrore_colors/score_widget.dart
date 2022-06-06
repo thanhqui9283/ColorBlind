@@ -20,6 +20,7 @@ class ScoreScreen extends StatelessWidget {
         init: QuestionController(),
         builder: (controller) {
           print('cau sai ${controller.failedAns}');
+          print('cau đúng ${controller.correctAns}');
           return Scaffold(
             body: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -55,7 +56,7 @@ class ScoreScreen extends StatelessWidget {
                         const SizedBox(
                           height: 10,
                         ),
-                        if (controller.failedAns == 0)
+                        if (controller.correctAns== 3 && controller.failedAns ==0)
                           Column(
                             children: <Widget>[
                               Text(ResultText.wellEyes,
@@ -176,7 +177,7 @@ class ScoreScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                        if (controller.failedAns == 10)
+                        if (controller.failedAns == 10 || (controller.correctAns == 0 && controller.failedAns ==0))
                           Column(
                             children: <Widget>[
                               Text(

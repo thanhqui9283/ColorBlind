@@ -34,7 +34,7 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
 
   bool get isAnswered => _isAnswered;
 
-  late int _correctAns;
+   int _correctAns = 0;
 
   int get correctAns => _correctAns;
 
@@ -56,7 +56,7 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
   bool check = false;
 
   void updateCheck() {
-    check = true;
+    check = false;
     update();
   }
 
@@ -88,14 +88,17 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
 
     if (_correctAns == _selectedAns) {
       _numOfCorrectAns++;
+      update();
     } else {
       _failedAns++;
+      update();
     }
     _animationController.stop();
     update();
 
     Future.delayed(const Duration(seconds: 1), () {
       nextQuestion();
+      update();
     });
   }
 
@@ -108,6 +111,7 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
       _animationController.reset();
 
       _animationController.forward().whenComplete(nextQuestion);
+      update();
     } else {
       update();
       if (check) {
@@ -115,6 +119,7 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
       }
       Get.close(1);
       Get.to(() => const ScoreScreen());
+      update();
     }
   }
 

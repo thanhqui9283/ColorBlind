@@ -65,7 +65,7 @@ const List sample_data = [
       'Số 10',
       'Không nhìn thấy số!',
       'Số 21',
-      'Sô 12',
+      'Số 12',
     ],
     "answer_index": 3,
     "photos": TestImages.image7,
