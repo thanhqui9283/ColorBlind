@@ -4,6 +4,8 @@ class AppColors {
   static const Color shadowColor = Color(0x14000000);
   static const Color cColor = Color(0xFF262323);
   static const Color textLogo = Color(0xFFFFFFFF);
+  static const Color backTrainEye = Color(0xFFA2A1A1);
+
   static const Color splashColor = Color(0XFFE0773F);
   static const Color transparent = Color(0x00000000);
   static const kSecondaryColor = Color(0xFF83BDD3);

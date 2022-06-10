@@ -1,4 +1,4 @@
-import 'package:colorsblind/features/scrore_colors/game_eyes.dart';
+import 'package:colorsblind/features/support_colors/support_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -80,7 +80,7 @@ class HomeWidget extends StatelessWidget {
                                   fontStyle: FontStyle.normal,
                                   fontWeight: FontWeight.bold,
                                   color: AppColors.kGrayColor,
-                                  fontSize: 25))),
+                                  fontSize: 22))),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,

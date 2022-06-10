@@ -152,7 +152,7 @@ class _CheckColorsState extends State<CheckColors> {
     String result;
     result = (await Tflite.loadModel(
       model: "assets/model_unquant.tflite",
-      labels: "assets/labels.txt",
+      labels:"assets/labels.txt" ,
     ))!;
     print(result);
   }

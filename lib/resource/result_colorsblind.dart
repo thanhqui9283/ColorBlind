@@ -25,5 +25,4 @@ class ResultText {
   static const String homepage = 'HOME';
 
   static const String score = 'ColorBlind nhận định khả năng bạn bị mù màu là:';
-  static const String trainEyes = ' https://definev.github.io/colorGame/#/';
 }

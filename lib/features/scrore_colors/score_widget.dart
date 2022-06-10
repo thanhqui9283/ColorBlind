@@ -9,6 +9,7 @@ import '../../resource/colors.dart';
 import '../../resource/images.dart';
 import '../../resource/result_colorsblind.dart';
 import '../quiz_colors/quiz_widget.dart';
+import '../support_colors/support_colors.dart';
 import 'game_eyes.dart';
 
 class ScoreScreen extends StatelessWidget {
