@@ -1,10 +1,7 @@
-Đen
-Xanh Dương
-Nâu
-Xanh Lá Cây
-Xám
-Cam
-Đỏ
-Tím
-Trắng
-Vàng
+ Đen
+ Xanh Dương
+ Xanh Lá Cây
+ Đỏ
+ Trắng
+ Vàng
+ Cam
