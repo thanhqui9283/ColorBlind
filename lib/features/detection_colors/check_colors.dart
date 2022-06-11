@@ -35,16 +35,6 @@ class _CheckColorsState extends State<CheckColors> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(TestColor.testColorAppbar,
-            style: GoogleFonts.alike(
-                fontStyle: FontStyle.normal,
-                fontWeight: FontWeight.bold,
-                color: AppColors.textLogo,
-                fontSize: 15)),
-        centerTitle: true,
-        backgroundColor: AppColors.kSecondaryColor,
-      ),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
@@ -52,8 +42,8 @@ class _CheckColorsState extends State<CheckColors> {
               Padding(
                 padding: const EdgeInsets.all(30.0),
                 child: Container(
-                    width: 100.0,
-                    height: 100.0,
+                    width: 150.0,
+                    height: 150.0,
                     decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -80,34 +70,42 @@ class _CheckColorsState extends State<CheckColors> {
                   ),
                   child: (_imageFile != null)
                       ? Image.file(_imageFile!)
-                      : Image.asset(
-                          AppImages.imageNull,
-                          height: MediaQuery.of(context).size.height * 0.2,
-                          width: MediaQuery.of(context).size.width * 0.8,
+                      : InkWell(
+                          onTap: () {
+                            selectImage();
+                          },
+                          child: Image.asset(
+                            AppImages.imageNull,
+                            height: MediaQuery.of(context).size.height * 0.2,
+                            width: MediaQuery.of(context).size.width * 0.8,
+                          ),
                         )),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  TextButton(
-                      onPressed: () {
-                        selectImage();
-                      },
-                      child: const Icon(
-                        Icons.folder,
-                        size: 35,
-                        color: AppColors.kSecondaryColor,
-                      )),
-                  TextButton(
-                      onPressed: () {
-                        cameraImage();
-                      },
-                      child: const Icon(
-                        Icons.camera_alt,
-                        size: 35,
-                        color: AppColors.kSecondaryColor,
-                      ))
-                ],
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    TextButton(
+                        onPressed: () {
+                          selectImage();
+                        },
+                        child: const Icon(
+                          Icons.folder,
+                          size: 50,
+                          color: AppColors.kSecondaryColor,
+                        )),
+                    TextButton(
+                        onPressed: () {
+                          cameraImage();
+                        },
+                        child: const Icon(
+                          Icons.camera_alt,
+                          size: 50,
+                          color: AppColors.kSecondaryColor,
+                        ))
+                  ],
+                ),
               ),
               const SizedBox(height: 10),
               Text(TestColor.resultColor,
@@ -122,7 +120,7 @@ class _CheckColorsState extends State<CheckColors> {
                     ? _classifiedResult!.map((result) {
                         return Card(
                           elevation: 1.0,
-                          color: AppColors.kGrayColor,
+                          color: AppColors.cColor,
                           child: Container(
                             width: MediaQuery.of(context).size.width * 0.5,
                             margin: const EdgeInsets.all(10),
@@ -133,7 +131,7 @@ class _CheckColorsState extends State<CheckColors> {
                                       fontStyle: FontStyle.normal,
                                       fontWeight: FontWeight.bold,
                                       color: AppColors.textLogo,
-                                      fontSize: 16)),
+                                      fontSize: 18)),
                             ),
                           ),
                         );
@@ -152,7 +150,7 @@ class _CheckColorsState extends State<CheckColors> {
     String result;
     result = (await Tflite.loadModel(
       model: "assets/model_unquant.tflite",
-      labels:"assets/labels.txt" ,
+      labels: "assets/labels.txt",
     ))!;
     print(result);
   }

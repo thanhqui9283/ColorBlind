@@ -18,6 +18,10 @@ class AppColors {
   static const kYellowColor = Color(0xFFFFFF00);
 
   static const kGrayColor = Color(0xFF494848);
+  static const ezColors = Color(0xFFE59292);
+  static const hardColors = Color(0xFFF57272);
+  static const hardHard = Color(0xFFE54A4A);
+
   static const kPrimaryGradient = LinearGradient(
     colors: [Color(0xFF83BDD3), Color(0xFF06E7D1)],
     begin: Alignment.centerLeft,

@@ -23,6 +23,8 @@ class ResultText {
   static const String helpEyes = 'BỆNH VIỆN EYES';
   static const String game = 'GAME EYES ';
   static const String homepage = 'HOME';
+  static const String againGame = 'CHƠI LẠI';
+
 
   static const String score = 'ColorBlind nhận định khả năng bạn bị mù màu là:';
 }

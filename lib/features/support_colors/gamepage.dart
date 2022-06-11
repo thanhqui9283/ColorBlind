@@ -58,7 +58,7 @@ class _GamePageState extends State<GamePage> {
     return MaterialApp(
 
       home: Scaffold(
-        backgroundColor: AppColors.backTrainEye,
+        backgroundColor: Colors.black26,
         body: Column(children: [
           SizedBox(
             height: 230,
@@ -79,7 +79,7 @@ class _GamePageState extends State<GamePage> {
                         '$TimeLeft',
                         textAlign: TextAlign.center,
                         style: const TextStyle(
-                            fontWeight: FontWeight.w200, fontSize: 130),
+                            fontWeight: FontWeight.bold, fontSize: 120, color: Colors.white),
                       ),
                     ),
                     const SizedBox(
@@ -121,12 +121,12 @@ class _GamePageState extends State<GamePage> {
                             if (TilesData[index] == nowcolor) {
                               score++;
                               TileColors.add(nowcolor);
-                              c = rnd.nextInt(27);
+                              c = rnd.nextInt(32);
                               nowcolor = TileColors[c];
                               TileColors.removeAt(c);
                               TilesData.clear();
                               for (int i = 0; i < widget.tlc; i++) {
-                                TilesData.add(TileColors[rnd.nextInt(26)]);
+                                TilesData.add(TileColors[rnd.nextInt(31)]);
                               }
                               TilesData[rnd.nextInt(widget.tlc)] = nowcolor;
                               TilesData.shuffle();

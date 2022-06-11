@@ -1,16 +1,18 @@
 import 'package:colorsblind/features/home_widget.dart';
 import 'package:colorsblind/features/scrore_colors/help_eyes.dart';
+import 'package:colorsblind/resource/text_name_home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../components/future_result.dart';
+import '../../components/text_result.dart';
 import '../../data/controllers/question_controller.dart';
 import '../../resource/colors.dart';
 import '../../resource/images.dart';
 import '../../resource/result_colorsblind.dart';
 import '../quiz_colors/quiz_widget.dart';
 import '../support_colors/support_colors.dart';
-import 'game_eyes.dart';
 
 class ScoreScreen extends StatelessWidget {
   const ScoreScreen({Key? key}) : super(key: key);
@@ -20,8 +22,8 @@ class ScoreScreen extends StatelessWidget {
     return GetBuilder<QuestionController>(
         init: QuestionController(),
         builder: (controller) {
-          print('cau sai ${controller.failedAns}');
-          print('cau đúng ${controller.correctAns}');
+          // print('cau sai ${controller.failedAns}');
+          // print('cau đúng ${controller.correctAns}');
           return Scaffold(
             body: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -44,350 +46,84 @@ class ScoreScreen extends StatelessWidget {
                 ),
                 Flexible(
                   flex: 3,
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Column(
-                      children: [
-                        Text(ResultText.score,
-                            style: GoogleFonts.alike(
-                                fontStyle: FontStyle.normal,
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.kGrayColor,
-                                fontSize: 18)),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        if (controller.correctAns== 3 && controller.failedAns ==0)
-                          Column(
-                            children: <Widget>[
-                              Text(ResultText.wellEyes,
-                                  style: GoogleFonts.alike(
-                                      fontStyle: FontStyle.normal,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.kOrigenColor,
-                                      fontSize: 24)),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              Text(
-                                ResultText.memeWellEyes,
-                                style: GoogleFonts.alike(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.cColor,
-                                    fontSize: 17),
-                              ),
-                            ],
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Column(
+                        children: [
+                          Text(ResultText.score,
+                              style: GoogleFonts.alike(
+                                  fontStyle: FontStyle.normal,
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.kGrayColor,
+                                  fontSize: 18)),
+                          const SizedBox(
+                            height: 10,
                           ),
-                        if (controller.failedAns == 1 ||
-                            controller.failedAns == 2)
-                          Column(
-                            children: <Widget>[
-                              Text(
-                                ResultText.mediumEyes,
-                                style: GoogleFonts.alike(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.kOrigenColor,
-                                    fontSize: 24),
-                              ),
-                              const SizedBox(
-                                height: 20,
-                              ),
-                              Text(
-                                ResultText.memeMediumEyes,
-                                style: GoogleFonts.alike(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.cColor,
-                                    fontSize: 17),
-                              ),
-                            ],
+                          if (controller.correctAns == 3 &&
+                              controller.failedAns == 0)
+                            TextResult(
+                                result: ResultText.wellEyes,
+                                advice: ResultText.memeWellEyes),
+                          if (controller.failedAns == 1 ||
+                              controller.failedAns == 2)
+                            TextResult(
+                                result: ResultText.mediumEyes,
+                                advice: ResultText.memeMediumEyes),
+                          if (controller.failedAns == 3 ||
+                              controller.failedAns == 4)
+                            TextResult(
+                                result: ResultText.mediumEyes,
+                                advice: ResultText.memeMediumEyes),
+                          if (controller.failedAns == 5 ||
+                              controller.failedAns == 6)
+                            TextResult(
+                                result: ResultText.highEyes,
+                                advice: ResultText.memeHighEyes),
+                          if (controller.failedAns == 7 ||
+                              controller.failedAns == 8 ||
+                              controller.failedAns == 9)
+                            TextResult(
+                                result: ResultText.endEyes,
+                                advice: ResultText.memeEndEyes),
+                          if (controller.failedAns == 10 ||
+                              (controller.correctAns == 0 &&
+                                  controller.failedAns == 0))
+                            TextResult(
+                                result: ResultText.error,
+                                advice: ResultText.memeError),
+                          const SizedBox(
+                            height: 20,
                           ),
-                        if (controller.failedAns == 3 ||
-                            controller.failedAns == 4)
-                          Column(
-                            children: <Widget>[
-                              Text(
-                                ResultText.mediumEyes,
-                                style: GoogleFonts.alike(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.kOrigenColor,
-                                    fontSize: 24),
-                              ),
-                              const SizedBox(height: 10),
-                              Text(
-                                ResultText.memeMediumEyes,
-                                style: GoogleFonts.alike(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.cColor,
-                                    fontSize: 17),
-                              ),
-                            ],
+                          FutureResult(
+                            onNavigator: const QuizWidget(check: true),
+                            textName: ResultText.testAgain,
+                            colorBackground: AppColors.shadowColor,
+                            image: AppImages.againTest,
                           ),
-                        if (controller.failedAns == 5 ||
-                            controller.failedAns == 6)
-                          Column(
-                            children: <Widget>[
-                              Text(
-                                ResultText.highEyes,
-                                style: GoogleFonts.alike(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.kOrigenColor,
-                                    fontSize: 24),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                ResultText.memeHighEyes,
-                                style: GoogleFonts.alike(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.cColor,
-                                    fontSize: 17),
-                              ),
-                            ],
+                          const SizedBox(height: 20),
+                          FutureResult(
+                            onNavigator: const HelpEyes(),
+                            textName: ResultText.helpEyes,
+                            colorBackground: AppColors.shadowColor,
+                            image: AppImages.hospital,
                           ),
-                        if (controller.failedAns == 7 ||
-                            controller.failedAns == 8 ||
-                            controller.failedAns == 9)
-                          Column(
-                            children: <Widget>[
-                              Text(
-                                ResultText.endEyes,
-                                style: GoogleFonts.alike(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.kOrigenColor,
-                                    fontSize: 24),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                ResultText.memeEndEyes,
-                                style: GoogleFonts.alike(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.cColor,
-                                    fontSize: 17),
-                              ),
-                            ],
+                          const SizedBox(height: 20),
+                          FutureResult(
+                            onNavigator: const GameEyes(),
+                            textName: TextNameHome.spColorBlind,
+                            colorBackground: AppColors.shadowColor,
+                            image: AppImages.trainEyes,
                           ),
-                        if (controller.failedAns == 10 || (controller.correctAns == 0 && controller.failedAns ==0))
-                          Column(
-                            children: <Widget>[
-                              Text(
-                                ResultText.error,
-                                style: GoogleFonts.alike(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.kOrigenColor,
-                                    fontSize: 24),
-                              ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                ResultText.memeError,
-                                style: GoogleFonts.alike(
-                                    fontStyle: FontStyle.normal,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.cColor,
-                                    fontSize: 17),
-                              ),
-                            ],
+                          const SizedBox(height: 20),
+                          FutureResult(
+                            onNavigator: HomeWidget(),
+                            textName: ResultText.homepage,
+                            colorBackground: AppColors.shadowColor,
+                            image: AppImages.logo,
                           ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Get.to(() => const QuizWidget(
-                                  check: true,
-                                ));
-                          },
-                          child: Container(
-                            alignment: AlignmentDirectional.center,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10.0),
-                                  child: Text(
-                                    ResultText.testAgain,
-                                    style: GoogleFonts.alike(
-                                        fontStyle: FontStyle.normal,
-                                        fontWeight: FontWeight.bold,
-                                        color: AppColors.textLogo,
-                                        fontSize: 22),
-                                  ),
-                                ),
-                                const SizedBox(width: 20),
-                                CircleAvatar(
-                                    radius: 30,
-                                    child: Image.asset(
-                                      AppImages.againTest,
-                                    )),
-                              ],
-                            ),
-                            height: 70,
-                            width: 230,
-                            decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(30),
-                                topRight: Radius.circular(30),
-                                bottomLeft: Radius.circular(30),
-                                bottomRight: Radius.circular(30),
-                              ),
-                              color: AppColors.cColor,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const HelpEyes()),
-                            );
-                          },
-                          child: Container(
-                            alignment: AlignmentDirectional.center,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 10.0),
-                                  child: Text(
-                                    ResultText.helpEyes,
-                                    style: GoogleFonts.alike(
-                                        fontStyle: FontStyle.normal,
-                                        fontWeight: FontWeight.bold,
-                                        color: AppColors.textLogo,
-                                        fontSize: 20),
-                                  ),
-                                ),
-                                const SizedBox(width: 20),
-                                CircleAvatar(
-                                    radius: 30,
-                                    child: Image.asset(
-                                      AppImages.hospital,
-                                    )),
-                              ],
-                            ),
-                            height: 70,
-                            width: 230,
-                            decoration: const BoxDecoration(
-                                borderRadius: BorderRadius.only(
-                                  topLeft: Radius.circular(30),
-                                  topRight: Radius.circular(30),
-                                  bottomLeft: Radius.circular(30),
-                                  bottomRight: Radius.circular(30),
-                                ),
-                                color: AppColors.kGrayColor),
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const GameEyes()),
-                            );
-                          },
-                          child: Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
-                                  child: Text(
-                                    ResultText.game,
-                                    style: GoogleFonts.alike(
-                                        fontStyle: FontStyle.normal,
-                                        fontWeight: FontWeight.bold,
-                                        color: AppColors.textLogo,
-                                        fontSize: 20),
-                                  ),
-                                ),
-                                const SizedBox(width: 20),
-                                CircleAvatar(
-                                    radius: 30,
-                                    child: Image.asset(
-                                      AppImages.trainEyes,
-                                    )),
-                              ],
-                            ),
-                            height: 70,
-                            width: 230,
-                            decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(30),
-                                topRight: Radius.circular(30),
-                                bottomLeft: Radius.circular(30),
-                                bottomRight: Radius.circular(30),
-                              ),
-                              color: AppColors.cColor,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeWidget()),
-                            );
-                          },
-                          child: Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(left: 8.0),
-                                  child: Text(
-                                    ResultText.homepage,
-                                    style: GoogleFonts.alike(
-                                        fontStyle: FontStyle.normal,
-                                        fontWeight: FontWeight.bold,
-                                        color: AppColors.textLogo,
-                                        fontSize: 20),
-                                  ),
-                                ),
-                                const SizedBox(width: 20),
-                                CircleAvatar(
-                                    radius: 30,
-                                    child: Image.asset(
-                                      AppImages.logo,
-                                    )),
-                              ],
-                            ),
-                            height: 70,
-                            width: 230,
-                            decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(30),
-                                topRight: Radius.circular(30),
-                                bottomLeft: Radius.circular(30),
-                                bottomRight: Radius.circular(30),
-                              ),
-                              color: AppColors.kGrayColor,
-                            ),
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
