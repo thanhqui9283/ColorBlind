@@ -39,7 +39,6 @@ class Option extends StatelessWidget {
                 ? Icons.close
                 : Icons.done;
           }
-
           return InkWell(
             onTap: press,
             child: Container(

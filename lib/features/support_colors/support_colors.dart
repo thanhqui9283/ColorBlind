@@ -44,7 +44,6 @@ List<Color> TileColors = [
   const Color(0xFF8C6A6A),
   const Color(0xFFFC4E30),
   const Color(0xFFEE5D45),
-
 ];
 
 List<Color> TilesData = []; // Color information of Tiles

@@ -34,7 +34,7 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
 
   bool get isAnswered => _isAnswered;
 
-   int _correctAns = 0;
+  int _correctAns = 0;
 
   int get correctAns => _correctAns;
 
@@ -93,6 +93,7 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
       _failedAns++;
       update();
     }
+
     _animationController.stop();
     update();
 
@@ -118,6 +119,7 @@ class QuestionController extends GetxController // ignore: deprecated_member_use
         Get.close(2);
       }
       Get.close(1);
+
       Get.to(() => const ScoreScreen());
       update();
     }

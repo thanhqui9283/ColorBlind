@@ -20,10 +20,26 @@ class ResultText {
   static const String memeError =
       'ColorBlind có vẻ nhận thấy bạn đang treo máy? Hoặc cố tình trả lời sai!!! Bạn vui lòng Kiểm Tra lại sau.! Thanks';
   static const String testAgain = 'KIỂM TRA LẠI';
-  static const String helpEyes = 'BỆNH VIỆN EYES';
+  static const String helpEyes = 'ỨNG DỤNG HỖ TRỢ KHÁC';
   static const String game = 'GAME EYES ';
   static const String homepage = 'HOME';
   static const String againGame = 'CHƠI LẠI';
+  static const String app1 = 'https://play.google.com/store/apps/details?id=com.colorblindpal.colorblindpal';
+  static const String app1title = 'Color Blind Pal';
+  static const String app1image = 'assets/images/app1.jpg';
+
+  static const String app2 = 'https://play.google.com/store/apps/details?id=com.divinememorygames.ishihara.color.blindness.test';
+  static const String app2image = 'assets/images/app2.jpg';
+  static const String app2title = 'Colorblind Test';
+
+  static const String app3image = 'assets/images/app3.jpg';
+  static const String app3 = 'https://play.google.com/store/apps/details?id=com.beanslab.colorblindhelper.helper';
+  static const String app3title = 'Colorblind Helper';
+
+
+
+
+
 
 
   static const String score = 'ColorBlind nhận định khả năng bạn bị mù màu là:';

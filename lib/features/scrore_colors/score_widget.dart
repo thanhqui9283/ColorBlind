@@ -1,4 +1,5 @@
 import 'package:colorsblind/features/home_widget.dart';
+import 'package:colorsblind/features/scrore_colors/color_blind_sp_inapp.dart';
 import 'package:colorsblind/features/scrore_colors/help_eyes.dart';
 import 'package:colorsblind/resource/text_name_home.dart';
 import 'package:flutter/material.dart';
@@ -95,15 +96,9 @@ class ScoreScreen extends StatelessWidget {
                           const SizedBox(
                             height: 20,
                           ),
-                          FutureResult(
-                            onNavigator: const QuizWidget(check: true),
-                            textName: ResultText.testAgain,
-                            colorBackground: AppColors.shadowColor,
-                            image: AppImages.againTest,
-                          ),
                           const SizedBox(height: 20),
                           FutureResult(
-                            onNavigator: const HelpEyes(),
+                            onNavigator: const InAppColor(),
                             textName: ResultText.helpEyes,
                             colorBackground: AppColors.shadowColor,
                             image: AppImages.hospital,
