@@ -37,10 +37,9 @@
 Xin cám ơn!
 
 ## Hình ảnh Demo ColorBlind:
-![](lib/screenshot_review/Screenshot_1655480665.png)
 
-![](lib/screenshot_review/Screenshot_1655480697.png)
+<img src="lib/screenshot_review/Screenshot_1655480665.png" width="300" />
+<img src="lib/screenshot_review/Screenshot_1655480697.png" width="300" />
+<img src="lib/screenshot_review/Screenshot_1655480722.png" width="300" />
 
-![](lib/screenshot_review/Screenshot_1655480722.png)
-
-![](lib/screenshot_review/Screenshot_1655481073.png)
+<img src="lib/screenshot_review/Screenshot_1655481073.png" width="300" />
