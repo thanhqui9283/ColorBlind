@@ -7,8 +7,8 @@ class AppImages {
   static const String trainEyes = 'assets/images/traineyes.png';
   static const String againTest = 'assets/images/reload.png';
   static const String hospital = 'assets/images/hospital.jpg';
-
-
+  static const String home = 'assets/images/home.png';
+  static const String back = 'assets/images/back.png';
 
 
   static const String score = 'assets/images/score.jpg';

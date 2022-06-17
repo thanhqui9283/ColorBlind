@@ -81,7 +81,7 @@ class _GameEyesState extends State<GameEyes> {
         Expanded(
           flex: 4,
           child:
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children:<Widget> [
             OptionLevel(
                 textName: TextNameHome.ezGame,
                 textName1: TextNameHome.ezGame1,

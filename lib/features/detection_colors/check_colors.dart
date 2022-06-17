@@ -6,9 +6,11 @@ import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 import 'dart:async';
 
+import '../../components/home_back.dart';
 import '../../resource/colors.dart';
 import '../../resource/images.dart';
 import '../../resource/test_colors.dart';
+import '../home_widget.dart';
 
 class CheckColors extends StatefulWidget {
   const CheckColors({Key? key}) : super(key: key);
@@ -39,6 +41,27 @@ class _CheckColorsState extends State<CheckColors> {
         child: Center(
           child: Column(
             children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(top: 40.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                        padding: const EdgeInsets.only(left: 5.0),
+                        child: HomeBack(
+                          navigator: HomeWidget(),
+                          widgetBackHome: const Icon(Icons.arrow_back, size: 30 ,),
+                        )),
+                    Padding(
+                        padding: const EdgeInsets.only(right: 5.0),
+                        child: HomeBack(
+                          navigator: HomeWidget(),
+                          widgetBackHome: const Icon(Icons.home, size: 30,),
+                        )),
+                  ],
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(30.0),
                 child: Container(
