@@ -20,7 +20,7 @@ class ResultText {
   static const String memeError =
       'ColorBlind có vẻ nhận thấy bạn đang treo máy? Hoặc cố tình trả lời sai!!! Bạn vui lòng Kiểm Tra lại sau.! Thanks';
   static const String testAgain = 'KIỂM TRA LẠI';
-  static const String helpEyes = 'ỨNG DỤNG HỖ TRỢ KHÁC';
+  static const String helpEyes = 'ỨNG DỤNG KHÁC';
   static const String game = 'GAME EYES ';
   static const String homepage = 'HOME';
   static const String againGame = 'CHƠI LẠI';

@@ -28,7 +28,7 @@
 
 
 ## Hướng dẫn sử dụng:
-1. Đầu tiên tải file APK :"path:lib/screenshot_review/app-release.apk".
+1. Đầu tiên tải file APK "app-release.apk".
 2. Sau đó click Cài đặt ứng dụng ColorBlind, sẽ có thông báo ứng dụng không được xác định (do bảo mật Android).
 3. Ứng dụng ColorBlind sẽ yêu cầu quyền cho phép cài đặt, chọn "Cho phép".
 4. Click " Vẫn cài đặt" để ColorBlind được cài đặt hoàn tất.
@@ -41,5 +41,4 @@ Xin cám ơn!
 <img src="lib/screenshot_review/Screenshot_1655480665.png" width="300" />
 <img src="lib/screenshot_review/Screenshot_1655480697.png" width="300" />
 <img src="lib/screenshot_review/Screenshot_1655480722.png" width="300" />
-
 <img src="lib/screenshot_review/Screenshot_1655481073.png" width="300" />
